@@ -8,9 +8,10 @@ public class XrProperties {
 	private static String XR_PRO_NAME = "xr.properties";
 	private static Properties properties = null;
 	
-	public XrProperties(){
+	public static String getProperties(String key){
 		if(properties == null){
 			try {
+				System.out.println(XrProperties.class.getClassLoader());
 				URL url = XrProperties.class.getClassLoader().getResource(XR_PRO_NAME);
 				if(url != null){
 					InputStream is = url.openStream();
@@ -20,9 +21,6 @@ public class XrProperties {
 				// TODO: handle exception
 			}			
 		}
-	}
-	
-	public static String getProperties(String key){
 		if(properties != null){
 			return properties.get(key).toString();
 		}

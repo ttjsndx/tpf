@@ -21,8 +21,8 @@ public class UploadPhotoImpl implements UploadFileInterface{
 			MonitoredDiskFileItem mdfi = (MonitoredDiskFileItem) list.get(i);
 			if (mdfi == null){
 				continue;
-			}			
-			this.doSaveFile(mdfi,inputData);		
+			}
+			this.doSaveFile(mdfi,inputData);
 		}
 		return false;
 	}

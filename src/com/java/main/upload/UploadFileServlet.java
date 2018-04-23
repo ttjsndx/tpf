@@ -24,15 +24,15 @@ public class UploadFileServlet extends HttpServlet{
 		doPost(request,response);
 	}
 	
-	public void doPost(HttpServletRequest request , HttpServletResponse response){		
+	public void doPost(HttpServletRequest request , HttpServletResponse response){
 		String para = null;
 		HashMap inputData = null;
 		String className = null;
 		try {
 			request.setCharacterEncoding("UTF-8");
-			className = request.getParameter("para");
-			para = request.getParameter("className");
-			para = java.net.URLDecoder.decode(java.net.URLDecoder.decode(para,"UTF-8"),"UTF-8");
+			className = request.getParameter("class");
+			para = request.getParameter("para");
+			//para = java.net.URLDecoder.decode(java.net.URLDecoder.decode(para,"UTF-8"),"UTF-8");
 			inputData = MapUtils.getHashMapByPara(para);
 			//获取req中的附件信息
 			ArrayList fileList = this.getMdfiList(request);
@@ -46,7 +46,7 @@ public class UploadFileServlet extends HttpServlet{
 			 				+ "&class=" + className + "&para=" + java.net.URLEncoder.encode(para,"UTF-8");
 			response.sendRedirect(url);
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e);
 		}		
 	}
 	

@@ -21,6 +21,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+	<form enctype="multipart/form-data" method="post" style="width:100%" action="/xr.file.upload?class=com.huaxin.util.file.upload.FileAsPhotoService&para=BO_SUPERVISOR_TASK_ID=,LONGITUDE=,LATITUDE=,CAPTURE=" target="frameFile">
+		<iframe id="frameFile" name="frameFile" style="display: none"></iframe>
+		<input type="file" name="file_head" id="file_head" onchange="setImagePreview();" accept="image/*" capture="camera">
+		<input type="submit" value="提交">
+	</form>
   </body>
 </html>

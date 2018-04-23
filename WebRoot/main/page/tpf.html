@@ -4,8 +4,9 @@
 <head>
 <title>拍照</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript" src='/acwsui/js/jquery/jquery.min.js'></script>
-<script type="text/javascript" src="take_photo_free.js"></script>
+<script type="text/javascript" src='../util/jquery.min.js'></script>
+<script type="text/javascript" src='../util/common.js'></script>
+<script type="text/javascript" src="tpf.js"></script>
 <style>
 @charset "utf-8";
 	/* elements */
@@ -29,7 +30,6 @@ body {
 .div_top{
 	position:absolute;
 	width: 100%;
-	margin-bottom: 210px;
 }
 .div_top_1{
 	position: relative;
@@ -105,7 +105,7 @@ body {
 
 <body onLoad="doinit();">
 	<div class="pagemask" >
-		<img src="images/loading.gif" class="loading_pic">
+		<img src="../image/loading.gif" class="loading_pic">
 	</div>
 	<form enctype='multipart/form-data' method='post' style='width:100%'>
 		<iframe id='frameFile' name="frameFile"  style='display: none'></iframe>
@@ -127,7 +127,7 @@ body {
     			确认上传
     		</div>
     		<div class="div12" id="TAKE_PHOTO">
-    			<img  src="images/icon_camera.png" id="TAKE_PHOTO_IMG">
+    			<img  src="../image/icon_camera.png" id="TAKE_PHOTO_IMG">
     		</div>
     		<div class="div13">
     			@版权所有 

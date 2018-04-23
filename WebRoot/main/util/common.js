@@ -26,7 +26,7 @@ function jsonToStrForAjax(jso){
 function changeAlert(){
 	window.alert = function(name){
 		try{
-			let iframe = document.createElement("IFRAME");
+			var iframe = document.createElement("IFRAME");
 			iframe.style.display="none";
 			iframe.setAttribute("src", 'data:text/plain,');
 			document.documentElement.appendChild(iframe);
@@ -37,3 +37,34 @@ function changeAlert(){
 		}
 	} 
 }
+
+/**
+ * 获取url 上的参数
+ */
+function getQueryString(queryStringName){
+	let returnValue = "";
+	let URLString = new String(document.location);
+	let serachLocation = -1;
+	let queryStringLength = queryStringName.length;
+	do{
+  		serachLocation = URLString.indexOf( queryStringName + "\=" );
+  		if (serachLocation != -1){
+   			if ((URLString.charAt(serachLocation-1) == '?') || (URLString.charAt(serachLocation-1) == '&')){
+    			URLString = URLString.substr(serachLocation);
+    			break;
+   			}
+   			URLString = URLString.substr(serachLocation + queryStringLength+1);
+  		}
+ 	}
+ 	while (serachLocation != -1)
+ 	if (serachLocation != -1){
+  		let seperatorLocation = URLString.indexOf("&");
+  		if (seperatorLocation == -1){
+   			returnValue = URLString.substr(queryStringLength+1);
+  		}else{
+   			returnValue = URLString.substring(queryStringLength + 1,seperatorLocation);
+  		}
+ 	}
+ 	return returnValue;
+}
+

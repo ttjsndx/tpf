@@ -9,7 +9,7 @@
  */
 var takePhotoJson ={
 	'IS_TAKE_PHOTO':0,
-	'UPLOAD_CLASS':'com.huaxin.util.file.upload.FileAsPhotoService',
+	'UPLOAD_CLASS':'com.java.main.upload.impl.UploadPhotoImpl',
 	'PARA':''
 };
 
@@ -18,7 +18,7 @@ var takePhotoJson ={
  */
 function doinit(){
 	initPara();
-	initStyle(); 
+	initStyle();
 	//checkDate(); //校验数据,若通过则加载拍照上传功能
 	initAction();
 	changeAlert();
@@ -87,7 +87,7 @@ function doUploadPhoto(){
 	$(".pagemask").show();
 	document.forms[0].method='post';
 	document.forms[0].enctype='multipart/form-data';
-	document.forms[0].action = "/acws.file.upload?class=" + takePhotoJson.UPLOAD_CLASS
+	document.forms[0].action = "/tpf/xr.file.upload?class=" + takePhotoJson.UPLOAD_CLASS
 						+ "&para=" + takePhotoJson.PARA;
 	document.forms[0].target = "frameFile";
 	document.forms[0].submit();
