@@ -87,7 +87,8 @@ function doUploadPhoto(){
 	$(".pagemask").show();
 	document.forms[0].method='post';
 	document.forms[0].enctype='multipart/form-data';
-	document.forms[0].action = "/tpf/xr.file.upload?class=" + takePhotoJson.UPLOAD_CLASS
+	//web.xml在捕获请求时，会加上tomcat配置的服务名称。
+	document.forms[0].action = "/xr.file.upload?class=" + takePhotoJson.UPLOAD_CLASS
 						+ "&para=" + takePhotoJson.PARA;
 	document.forms[0].target = "frameFile";
 	document.forms[0].submit();
