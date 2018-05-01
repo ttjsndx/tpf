@@ -19,7 +19,7 @@ import com.java.util.StringUtils;
 
 public class UploadFileServlet extends HttpServlet{
 	
-	private final static String REDIRECT_URL="/acwsui/js/jquery/fileupload/file_upload.html";
+	private final static String REDIRECT_URL="file_upload.html";
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
 		doPost(request,response);
 	}
