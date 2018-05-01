@@ -15,7 +15,9 @@ public class XrProperties {
 				URL url = XrProperties.class.getClassLoader().getResource(XR_PRO_NAME);
 				if(url != null){
 					InputStream is = url.openStream();
+					properties = new Properties();
 					properties.load(is);
+					is.close();
 				}
 			} catch (Exception e) {
 				// TODO: handle exception

@@ -36,7 +36,7 @@ public class UploadPhotoImpl implements UploadFileInterface{
 	private void doSaveFile(MonitoredDiskFileItem mdfi, HashMap params) {
 		String fileType = ".jpg";
 		String savePath = CommonUtil.getSystemSeq() + this.getFilePath();
-		String fullPath = CommonUtil.getXrProperties("acws.localdisk.dir") + savePath;
+		String fullPath = CommonUtil.getXrProperties("file.save.path") + savePath;
 		
 		String uName = this.getFileName();
 		byte buffer[] = new byte[10 * 1024 * 1024];	
